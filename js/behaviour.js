@@ -14,28 +14,46 @@ function getComputerChoice(randomizer) {
         return "Scissors";
     }
 }
+playerSelection = prompt("Rock, Paper, Scissors:");
+
+getComputerChoice(randomizer);
 console.log(getComputerChoice(randomizer));
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Rock, Paper, Scissors:");
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "Paper") {
-        return "You Lose! Paper beats Rock";
+
+    if (playerSelection.toLowerCase() === "rock" && computerSelection === 1) {
+        return "You Lose! Paper beats rock";
     }
-    else if (playerSelection.ToLowerCase() === "paper" && computerSelection === "Scissors") {
+    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 2) {
         return "You Lose! Scissors beats paper";
     }
-    else if (playerSelection.ToLowerCase() === "scissors" && computerSelection === "Rock") {
+    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 0) {
         return "You Lose! Rock beats scissors";
     }
-    else if (playerSelection.ToLowerCase() === "rock" && computerSelection === "Scissors") {
+    else if (playerSelection.toLowerCase() === "rock" && computerSelection === 2) {
         return "You win! Rock beats scissors";
     }
-    else if (playerSelection.ToLowerCase() === "paper" && computerSelection === "Rock") {
-        return "You win"
+    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 0) {
+        return "You win! Paper beats rock"
     }
-        
+    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 1) {
+        return "You win! Scissors beats paper";
+    }
+    else if (playerSelection.toLowerCase() === "rock" && computerSelection === 0) {
+        return "Shit! Again";
+    }
+    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 1) {
+        return "Shit! Again";
+    }
+    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 2) {
+        return "Shit! Again";
+    }
+    else {
+        return "Enter rock or paper or scissors only!";
+    }        
 }
-
+playRound(playerSelection, computerSelection);
+console.log(playRound(playerSelection, computerSelection));
 
 /**
  * getComputerChoice function
