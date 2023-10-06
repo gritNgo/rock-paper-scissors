@@ -1,5 +1,7 @@
 let randomizer = 3;
 let computerSelection;
+let playerSelection;
+let message;                   
 let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
@@ -23,68 +25,73 @@ getComputerChoice(randomizer);
 console.log(getComputerChoice(randomizer));
 
 // get input from player
-let playerSelection = prompt("Rock, Paper, Scissors:");
 
 function playRound(playerSelection, computerSelection) {
 
+    playerSelection = prompt("Rock, Paper, Scissors:");
+
     if (playerSelection.toLowerCase() === "rock" && computerSelection === 1) {
         computerScore++;
-        return "You Lose! Paper beats rock";
+        return message = "You Lose! Paper beats rock";
     }
     else if (playerSelection.toLowerCase() === "paper" && computerSelection === 2) {
         computerScore++;
-        return "You Lose! Scissors beats paper";
+        return message = "You Lose! Scissors beats paper";
     }
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 0) {
         computerScore++;
-        return "You Lose! Rock beats scissors";
+        return message = "You Lose! Rock beats scissors";
     }
     else if (playerSelection.toLowerCase() === "rock" && computerSelection === 2) {
         playerScore++;
-        return "You win! Rock beats scissors";
+        return message = "You win! Rock beats scissors";
     }
     else if (playerSelection.toLowerCase() === "paper" && computerSelection === 0) {
         playerScore++;
-        return "You win! Paper beats rock"
+        return message = "You win! Paper beats rock"
     }
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 1) {
         playerScore++;
-        return "You win! Scissors beats paper";
+        return message = "You win! Scissors beats paper";
     }
     else if (playerSelection.toLowerCase() === "rock" && computerSelection === 0) {
-        return "Shit! Again";
+        return message = "Shit! Again";
     }
     else if (playerSelection.toLowerCase() === "paper" && computerSelection === 1) {
-        return "Shit! Again";
+        return message = "Shit! Again";
     }
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 2) {
-        return "Shit! Again";
+        return message = "Shit! Again!";
     }
     else {
-        return "Enter rock or paper or scissors only!";
+        return message = "Enter rock or paper or scissors only!";
     }            
-}
-rounds++;
-console.log(rounds);
-playRound(playerSelection, computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+}   
 
 function game() {
-    if (rounds <= 5)
-    {
-        playRound(playerSelection, computerSelection);
-        if (playerScore++) {
-            return console.log("You win");
-        }
-        else if (computerScore++) {
-            return console.log("You lose");
-        }
-        else {
-            return console.log("draw")
-        }
-    }
+    playRound(playerSelection, computerSelection);
+    console.log(message);   
+    playRound(playerSelection, computerSelection);
+    console.log(message);   
+    playRound(playerSelection, computerSelection);
+    console.log(message);   
+    playRound(playerSelection, computerSelection);
+    console.log(message);   
+    playRound(playerSelection, computerSelection);
+    console.log(message);   
+    console.log(playerScore);
+    console.log(computerScore);
 
-    
+    if (playerScore > computerScore) {
+        console.log(`You win with ${playerScore} wins!`);
+    }
+    else if (computerScore > playerScore) {
+        console.log(`Computer wins with ${computerScore} wins.`);
+    }
+    else {
+        console.log("The game is a draw");
+    }
+    alert("Hell yeah!");
 }
 game();
 
@@ -116,12 +123,14 @@ game();
 /**
  * function game()
  * interface: none
- * inputs: playRound(playerSelection, computerSelection);
- * outputs: play a 5 round game that keeps score and reports a winner or loser at the end of each round
+ * inputs: none
+ * outputs: 
+ * 1. result of each round, keep track of game score
+ * 2. report winner at the end of the game
  * steps:
  * 1. call playRound() to play a round
- * 2. use console.log() to display the results of the round
+ * 2. use console.log() to display the result of the round
  * 3. keep the score in a variable
- * 4. do this 5 times (for 5 rounds) 
- * 5. report the winner at the end of the game
+ * 4. do this 5 times for 5 rounds
+ * 5. report the winner with higher score at the end of the game
  */
