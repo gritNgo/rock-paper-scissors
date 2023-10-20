@@ -4,8 +4,6 @@ let playerSelection;
 let message;                   
 let playerScore = 0;
 let computerScore = 0;
-let rounds = 0;
-let winner;
 
 function getComputerChoice(randomizer) {
     computerSelection = Math.floor(Math.random() * randomizer);
@@ -72,19 +70,7 @@ function playRound(playerSelection, computerSelection) {
     }            
 }   
 
-function game() {
-    playRound(playerSelection, computerSelection);
-    console.log(message);   
-    playRound(playerSelection, computerSelection);
-    console.log(message);   
-    playRound(playerSelection, computerSelection);
-    console.log(message);   
-    playRound(playerSelection, computerSelection);
-    console.log(message);   
-    playRound(playerSelection, computerSelection);
-    console.log(message);   
-    console.log(playerScore);
-    console.log(computerScore);
+/* function game() {
 
     if (playerScore > computerScore) {
         console.log(`You win with ${playerScore} wins!`);
@@ -95,46 +81,35 @@ function game() {
     else {
         console.log("The game is a draw");
     }
-    alert("Hell yeah!");
-}
-game();
+} */
 
-/**
- * getComputerChoice function
- * interface: none
- * inputs: none
- * outputs: random output of rock/paper/scissors
- * steps to get output: 
- * 1. Create a variable randomizer to store a random number upto and excluding 3 (0/1/2)
- *      that will equate to rock/paper/scissors respectively
- * 2. Create a function that stores the output of the randomization  using math functions
- *      inside the computerSelection variable
- * 3. For now, test this on the console using console.log(function())
- */
+const rockButton = document.querySelector("#rock");
+rockButton.addEventListener("click", () => {
+    playerSelection = "rock";
+});
+console.log(playerSelection);
 
-/**
- * function to play a single round of the game: funct playRound()
- * interface: none
- * inputs: playerSelection, computerSelection 
- * outputs: string that declares the winner "You Lose! Paper beats Rock"
- * steps: 
- * 1. Create a playerSelection variable that can be rock/paper/scissors
- * 2. Use conditionals to set case insensitivity
- * 3. Match the two parameters
- * 4. Return the output string that declares the winner "You Lose! Paper beats Rock"
- */
+/* const paperButton = document.querySelector("#paper");
+paperButton.addEventListener("click", () => {
+    playerSelection = "paper";
+});
 
-/**
- * function game()
- * interface: none
- * inputs: none
- * outputs: 
- * 1. result of each round, keep track of game score
- * 2. report winner at the end of the game
- * steps:
- * 1. call playRound() to play a round
- * 2. use console.log() to display the result of the round
- * 3. keep the score in a variable
- * 4. do this 5 times for 5 rounds
- * 5. report the winner with higher score at the end of the game
- */
+const scissorsButton = document.querySelector("#scissors");
+scissorsButton.addEventListener("click", () => {
+    playerSelection = "scissors";
+}); */
+
+
+/* // code to add event listener to all buttons with querySelectorAll
+// buttons is a node list. It is an array-like object 
+const buttons = document.querySelectorAll("button");
+
+// use the forEach method to iterate through each button
+buttons.forEach((button) => {
+    // and for each, add a "click" listener
+    button.addEventListener("click", () => {
+        alert(button.id);
+    })
+})
+let elements = Array.from(nodeList); */
+
