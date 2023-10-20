@@ -55,15 +55,19 @@ function playRound(playerSelection, computerSelection) {
         return message = "You win! Scissors beats paper";
     }
     else if (playerSelection.toLowerCase() === "rock" && computerSelection === 0) {
-        return message = "Shit! Again";
+        getComputerChoice(randomizer);
+        return message = "Both rock! Again";
     }
     else if (playerSelection.toLowerCase() === "paper" && computerSelection === 1) {
-        return message = "Shit! Again";
+        getComputerChoice(randomizer);
+        return message = "Both paper! Again";
     }
     else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 2) {
-        return message = "Shit! Again!";
+        getComputerChoice(randomizer);
+        return message = "Both scissors! Again!";
     }
     else {
+        getComputerChoice(randomizer);
         return message = "Enter rock or paper or scissors only!";
     }            
 }   
