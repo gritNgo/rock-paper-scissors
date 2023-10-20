@@ -26,7 +26,8 @@ console.log(getComputerChoice(randomizer));
 
 function playRound(playerSelection, computerSelection) {
 
-    playerSelection = prompt("Rock, Paper, Scissors:");
+    // how to put playerSelection into buttons?
+    // playerSelection = prompt("Rock, Paper, Scissors:");
 
     if (playerSelection.toLowerCase() === "rock" && computerSelection === 1) {
         computerScore++;
@@ -84,10 +85,8 @@ function playRound(playerSelection, computerSelection) {
 } */
 
 const rockButton = document.querySelector("#rock");
-rockButton.addEventListener("click", () => {
-    playerSelection = "rock";
-});
-console.log(playerSelection);
+rockButton.addEventListener("click", playRound(playerSelection = "rock", computerSelection));
+
 
 /* const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {
