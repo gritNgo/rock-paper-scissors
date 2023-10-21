@@ -7,10 +7,10 @@ let computerScore = 0;
 
 function getComputerChoice(randomizer) {
     computerSelection = Math.floor(Math.random() * randomizer);
-    if (computerSelection === 0) {
+    if (computerSelection  === 0) {
         return "Rock";
     }
-    else if (computerSelection === 1) {
+    else if (computerSelection  === 1) {
         return "Paper";
     }
     else {
@@ -22,46 +22,41 @@ getComputerChoice(randomizer);
 // check if getComputerChoice works
 console.log(getComputerChoice(randomizer));
 
-// get input from player
-
 function playRound(playerSelection, computerSelection) {
 
-    // how to put playerSelection into buttons?
-    // playerSelection = prompt("Rock, Paper, Scissors:");
-
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === 1) {
+    if (playerSelection = rockButton && computerSelection === 1) {
         computerScore++;
         return message = "You Lose! Paper beats rock";
     }
-    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 2) {
+    else if (playerSelection = "paper" && computerSelection === 2) {
         computerScore++;
         return message = "You Lose! Scissors beats paper";
     }
-    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 0) {
+    else if (playerSelection = "scissors" && computerSelection === 0) {
         computerScore++;
         return message = "You Lose! Rock beats scissors";
     }
-    else if (playerSelection.toLowerCase() === "rock" && computerSelection === 2) {
+    else if (playerSelection = "rock" && computerSelection === 2) {
         playerScore++;
         return message = "You win! Rock beats scissors";
     }
-    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 0) {
+    else if (playerSelection = "paper" && computerSelection === 0) {
         playerScore++;
         return message = "You win! Paper beats rock"
     }
-    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 1) {
+    else if (playerSelection = "scissors" && computerSelection === 1) {
         playerScore++;
         return message = "You win! Scissors beats paper";
     }
-    else if (playerSelection.toLowerCase() === "rock" && computerSelection === 0) {
+    else if (playerSelection = "rock" && computerSelection === 0) {
         getComputerChoice(randomizer);
         return message = "Both rock! Again";
     }
-    else if (playerSelection.toLowerCase() === "paper" && computerSelection === 1) {
+    else if (playerSelection = "paper" && computerSelection === 1) {
         getComputerChoice(randomizer);
         return message = "Both paper! Again";
     }
-    else if (playerSelection.toLowerCase() === "scissors" && computerSelection === 2) {
+    else if (playerSelection = "scissors" && computerSelection === 2) {
         getComputerChoice(randomizer);
         return message = "Both scissors! Again!";
     }
@@ -69,6 +64,8 @@ function playRound(playerSelection, computerSelection) {
         getComputerChoice(randomizer);
         return message = "Enter rock or paper or scissors only!";
     }            
+
+
 }   
 
 /* function game() {
@@ -85,8 +82,9 @@ function playRound(playerSelection, computerSelection) {
 } */
 
 const rockButton = document.querySelector("#rock");
-rockButton.addEventListener("click", playRound(playerSelection = "rock", computerSelection));
+rockButton.addEventListener("click", () => { playerSelection = 5;});
 
+// get input from player
 
 /* const paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {

@@ -1,0 +1,37 @@
+Rock paper scissors game:
+
+interface: 3 buttons: Rock paper scissors
+
+inputs: player selection by mouse click event on buttons
+
+outputs: The result of the game (playerSelection vs computerSelection) 
+
+steps:
+1. run getComputerChoice() to get computerSelection
+2. click on a play button which will output playerSelection
+3. run playRound() which will do computerSelection vs playerSelection and display output in the div id = "result"
+
+
+- getComputerChoice() returns computerSelection
+
+
+- playerSelection:
+inputs: game button click
+
+outputs: playerSelection
+
+steps:
+1. create a querySelector for each button
+2. add click event listener and pass playRound(), which will display the result
+
+
+-playRound():
+
+interface: none
+
+inputs: playerSelection, computerSelection
+
+outputs: game result in div
+
+steps to get output: 
+1. make a loop to return the various possible results
