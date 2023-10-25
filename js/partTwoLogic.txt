@@ -7,10 +7,9 @@ inputs: player selection by mouse click event on buttons
 outputs: The result of the game (playerSelection vs computerSelection) 
 
 steps:
-1. run getComputerChoice() to get computerSelection
-2. click on a play button which will output playerSelection
-3. run playRound() which will do computerSelection vs playerSelection and display output in the div id = "result"
-
+1. Click a button; playerSelection will equal the selection
+2. playRound() will be run; playerSelection & computerSelection (output from getComputerChoice()) will be parameters
+3. The result of the game will be output into the div = "result"
 
 - getComputerChoice() returns computerSelection
 
